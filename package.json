@@ -6,10 +6,10 @@
   "scripts": {
     "test": "mocha \"test/**/*.js\"",
     "build": "npm run build-js",
-    "build-js": "node_modules/.bin/browserify index.js -o dist/bundle.js",
+    "build-js": "node_modules/.bin/browserify index.js -o dist/comments.js",
     "build-css": "",
     "watch": "npm run watch-css && npm run watch-js",
-    "watch-js": "node_modules/.bin/watchify index.js -o dist/bundle.js -dv",
+    "watch-js": "node_modules/.bin/watchify index.js -o dist/comments.js -dv",
     "watch-css": "node_modules/.bin/node-sass -w css/ -o dist/css/"
   },
   "repository": {
