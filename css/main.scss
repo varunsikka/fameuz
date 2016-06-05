@@ -1,0 +1,14 @@
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+$main-text-color: #6F6F6F;
+$main-font-family: Helvetica, sans-serif;
+$main-font-size: 10px;
+
+body {
+	font-family: $main-font-family;
+	color: $main-text-color;
+}
+
+h1 {
+	font-size: $main-font-size;
+}
