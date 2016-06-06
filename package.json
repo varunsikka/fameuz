@@ -5,12 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha \"test/**/*.js\"",
-    "build": "npm run build-js",
-    "build-js": "node_modules/.bin/browserify index.js -o dist/comments.js",
-    "build-css": "",
-    "watch": "npm run watch-css && npm run watch-js",
-    "watch-js": "node_modules/.bin/watchify index.js -o dist/comments.js -dv",
-    "watch-css": "node_modules/.bin/node-sass -w css/ -o dist/css/"
+    "build": "npm run build-css && npm run build-js",
+    "build-js": "node_modules/.bin/browserify -t [babelify] lib/main.jsx -o dist/comments.js",
+    "build-css": "node_modules/.bin/node-sass css/ -o dist/css/",
+    "watch": "node_modules/.bin/watch \"npm run build\" lib/"
   },
   "repository": {
     "type": "git",
@@ -24,13 +22,14 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3",
+    "watch": "^0.18.0",
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.3.0",
     "backbone": "^1.3.3",
-    "bootstrap": "^3.3.6",
     "bootstrap-sass": "^3.3.6",
     "browserify": "^13.0.1",
     "jquery": "^2.2.4",
